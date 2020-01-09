@@ -1,0 +1,181 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.Master.cs" Inherits="QuanLiDiemSinhVien.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin</title>
+    <link rel="shortcut icon" href="iconfinder_131-woman-student-1_3099384.ico"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/AdminLTE.css" rel="stylesheet" />
+    <link href="css/_all-skins.min.css" rel="stylesheet" />
+    <link href="Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <form id="form1" runat="server">
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+                <div class="logo">
+                    <span>Chào, <asp:Label ID="lbl_user" runat="server"></asp:Label></span>
+                </div>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <li><asp:LinkButton ID="lbt_doimatkhau" runat="server" OnClick="lbt_doimatkhau_Click" >Đổi mật khẩu</asp:LinkButton></li>
+                            <!--<li><a href="#">Đăng xuất</a></li>-->
+                            <li><asp:Button ID="btn_logout" style="margin-top:13px; border:0; background-color:#3C8DBC; color:white;" runat="server" Text="Đăng Xuất" OnClick="btn_logout_Click" /></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- =============================================== -->
+
+            <!-- Left side column. contains the sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <%--<div class="sidebar-menu" style="margin-bottom: 5px; padding-left: 15px;">
+                        <a href="#" class=""><i class="fa fa-home fa-fw"></i>TRANG CHỦ</a>
+                    </div>--%>
+
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu" data-widget="tree">
+                        <li>
+                            <a href="TrangChu.aspx">
+                                <i class="fa fa-home" aria-hidden="true"></i><span>TRANG CHỦ</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-tasks" aria-hidden="true"></i><span>DANH MỤC</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            
+                            <ul class="treeview-menu">
+                                <li><a href="DanhSachSinhVien.aspx"><i class="fa fa-graduation-cap"></i>Danh sách sinh viên</a></li>
+                                <li><a href="DanhSachKhoa.aspx"><i class="fa fa-university"></i>Danh sách khoa</a></li>
+                                <li><a href="DanhSachChuyenNganh.aspx"><i class="fa fa-trophy"></i>Danh sách chuyên ngành</a></li>
+                                <li><a href="DanhSachMonHoc.aspx"><i class="fa fa-book"></i>Danh sách môn học</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-wrench" aria-hidden="true"></i><span>QUẢN LÝ</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview">
+                                <asp:Literal ID="Ltr_phanquyen" runat="server">
+                                 
+                                </asp:Literal>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- =============================================== -->
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <!--<h1>
+        @yield('title')
+        <small>it all starts here</small>
+      </h1>-->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Default box -->
+                    <div class="box">
+                        <div class="box-header with-border" style="height: 30px;">
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                                    title="Collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <!-- /.box-footer-->
+                    </div>
+                    <div class="box">
+                        <div class="box-footer">
+                            <div>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box -->
+
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    &nbsp;ASP.NET
+                </div>
+                <strong>Copyright &copy; 2019-2020.</strong> Toán-Cường-Thịnh</footer>
+
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 3 -->
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/adminlte.min.js"></script>
+        <script src="js/dashboard.js"></script>
+        <script src="tinymce/tinymce.min.js"></script>
+        <script src="tinymce/config.js"></script>
+        <script src="js/function.js"></script>
+
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NguoiDung.Master.cs" Inherits="QuanLiDiemSinhVien.NguoiDung" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" href="iconfinder_131-woman-student-1_3099384.ico">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="style/materPase.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/w3.css" rel="stylesheet" />
+    <link href="fonts/font-roboto.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        html, body, h1, h2, h3, h4, h5 {
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server" method="post">
+        <!-- banner-->
+
+        <!-- menu top -->
+        <div class="w3-bar w3-top w3-large"  style="z-index: 4; background-color: #3C8DBC; color: white;">
+            <img style="height: 150px; width: 100%; float: left;" src="pic/banner.png" />
+            <div class="w3-bar-item w3-right">
+                <a href="frm_login.aspx" style="text-decoration: none; color: white;">Đăng nhập  </a>
+                |
+                <a href="frm_xemdiem.aspx" style="text-decoration: none; color: white;">Xem điểm </a>
+            </div>
+        </div>
+        <div>
+
+            <!-- Phần nội dung-->
+            <div class="w3-main container" style="margin-top: 200px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <!--Phần footer-->
+        <div class=" w3-bottom footer w3-center" style="background-color: #3C8DBC; color: white;">
+            <span>ĐỀ TÀI QUẢN LÝ ĐIỂM SINH VIÊN - PHÁT TRIỂN NỀN TẢNG ASP.NET
+                <br />
+                Mọi chi tiết xin liên hệ : Nhóm 01 - email: huent.humg@gmail.com - mobile: 0984971873.
+            </span>
+        </div>
+    </form>
+</body>
+</html>
+
